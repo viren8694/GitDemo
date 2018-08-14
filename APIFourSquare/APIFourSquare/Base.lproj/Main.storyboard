@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I4b-kc-lW8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="APIFourSquare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bBU-N2-Qm4">
+                                <rect key="frame" x="0.0" y="64" width="375" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="AZL-6P-duu"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="efv-p1-JSJ"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CAl-RY-HKG">
+                                <rect key="frame" x="0.0" y="123" width="375" height="544"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="sli-sP-unP">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sli-sP-unP" id="7iY-bd-Dw0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="R1Q-h5-kKO"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="CDX-EC-RBU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CAl-RY-HKG" firstAttribute="top" secondItem="bBU-N2-Qm4" secondAttribute="bottom" constant="4" id="COP-XV-U6R"/>
+                            <constraint firstItem="bBU-N2-Qm4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cS4-X4-Cn7"/>
+                            <constraint firstItem="CAl-RY-HKG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="itL-N9-U9d"/>
+                            <constraint firstItem="bBU-N2-Qm4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lGk-aF-bjm"/>
+                            <constraint firstItem="CAl-RY-HKG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lRZ-uh-9ud"/>
+                            <constraint firstItem="CAl-RY-HKG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vF7-bW-RcT"/>
+                            <constraint firstItem="bBU-N2-Qm4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zOZ-O9-yCH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MiU-jX-k9u">
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="veN-Kv-2OQ">
+                            <connections>
+                                <action selector="BarButton:" destination="BYZ-38-t0r" id="LMx-sU-o8O"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="Venues_tableview" destination="CAl-RY-HKG" id="hR6-rL-nWd"/>
+                        <outlet property="searchBar" destination="bBU-N2-Qm4" id="JrX-Xl-F5T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="336.80000000000001" y="58.920539730134934"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="FLO-On-fDl">
+            <objects>
+                <viewController storyboardIdentifier="LocationViewController" id="brW-PK-irU" customClass="LocationViewController" customModule="APIFourSquare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ovn-mk-ZEr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OaC-fd-zHl">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OaC-fd-zHl" firstAttribute="leading" secondItem="B9Z-mc-D1S" secondAttribute="leading" id="FlB-tt-jyC"/>
+                            <constraint firstItem="OaC-fd-zHl" firstAttribute="bottom" secondItem="B9Z-mc-D1S" secondAttribute="bottom" id="W49-2P-n8L"/>
+                            <constraint firstItem="OaC-fd-zHl" firstAttribute="top" secondItem="B9Z-mc-D1S" secondAttribute="top" id="WDi-Na-8jK"/>
+                            <constraint firstItem="OaC-fd-zHl" firstAttribute="trailing" secondItem="B9Z-mc-D1S" secondAttribute="trailing" id="Z0r-lf-AbV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="B9Z-mc-D1S"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapkitApple" destination="OaC-fd-zHl" id="78c-fa-W5d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aSq-Ws-ZOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1104.8" y="58.920539730134934"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hw9-j4-e95">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I4b-kc-lW8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ijz-WC-ipq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iMq-Y6-W0o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MVC-IT-0I1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-422" y="59"/>
+        </scene>
+    </scenes>
+</document>
