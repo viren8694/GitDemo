@@ -115,7 +115,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         }
     }
     
-
+    func getDataCA() {
+        print("Mountain View, CA")
+    }
+       
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
