@@ -127,7 +127,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
     func setAccessibilityIds(){
         let a = 10
         let b = 20
-        let c = a + b
-        print(c)
+        print("Hey there")
     }
 }
