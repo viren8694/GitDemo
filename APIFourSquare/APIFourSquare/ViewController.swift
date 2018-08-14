@@ -119,4 +119,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
+    
+    func setAccessibilityIds(){
+        let a = 10
+        let b = 20
+        let c = a + b
+        print(c)
+    }
 }
